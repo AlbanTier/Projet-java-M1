@@ -1,0 +1,23 @@
+{
+  "name": "projet-java-m1-tournament-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbanTier/Projet-java-M1-Tournament-Manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbanTier/Projet-java-M1-Tournament-Manager/issues"
+  },
+  "homepage": "https://github.com/AlbanTier/Projet-java-M1-Tournament-Manager#readme",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
