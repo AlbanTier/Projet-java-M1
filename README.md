@@ -13,7 +13,7 @@ Alban :star:
 - Docker 
 - Créer le docker MySQL avec la commande suivante (besoin d'un docker compose):
 
-`docker run --name mysql-tournamentmanager -p 3306:3306 -e MYSQL_USER=java -e MYSQL_PASSWORD=java -e MYSQL_DATABASE=tournament -e MYSQL_ROOT_PASSWORD=root -d mysqldocker run --name mysql-tournamentmanager -p 3306:3306 -e MYSQL_USER=java -e MYSQL_PASSWORD=java -e MYSQL_DATABASE=tournament -e MYSQL_ROOT_PASSWORD=root -d mysql`
+`docker run --name mysql-tournamentmanager -p 3306:3306 -e MYSQL_USER=java -e MYSQL_PASSWORD=java -e MYSQL_DATABASE=tournament -e MYSQL_ROOT_PASSWORD=root -d mysql`
 
 # :rocket: Pour faire fonctionner le projet :
   
