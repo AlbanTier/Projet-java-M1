@@ -12,7 +12,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@Table(name = "tournoi")
+@ToString
 public class Tournoi {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
