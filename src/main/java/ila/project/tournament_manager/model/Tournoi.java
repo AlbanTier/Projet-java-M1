@@ -24,5 +24,5 @@ public class Tournoi {
     private String type;
     private String description;
     private String etat;
-    private Int nbParticipants;
+    private int nbParticipants;
 }
