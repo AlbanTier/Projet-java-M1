@@ -3,6 +3,8 @@ package ila.api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ila.api.mapper.TournoiMapper;
+import ila.service.TournoiService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

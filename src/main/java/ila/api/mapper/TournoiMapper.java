@@ -1,8 +1,8 @@
 package ila.api.mapper;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.jaxb.SpringDataJaxb.PageDto;
+import org.springframework.web.bind.annotation.Mapping;
 
 import ila.api.dto.TournoiCreateDto;
 import ila.api.dto.TournoiDto;

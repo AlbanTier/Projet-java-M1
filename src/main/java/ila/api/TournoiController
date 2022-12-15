@@ -1,0 +1,6 @@
+@RequiredArgsConstructor
+@RestController
+@RequestMapping(path = "/v1/tournoi", produces = APPLICATION_JSON_VALUE)
+public class TournoiController {
+    
+}
