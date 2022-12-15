@@ -1,6 +1,9 @@
 package ila.api.mapper;
 
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.Mapping;
+
+import ila.api.dto.PaginationContext;
 
 @Mapper(componentModel = "spring")
 public interface PageMapper {

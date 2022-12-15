@@ -12,5 +12,5 @@ public interface TournoiService {
 
     Optional<Tournoi> getTournoiById(Long id);
 
-    Tournoi saveTournoi(Tournoi superhero);
+    Tournoi saveTournoi(Tournoi tournoi);
 }
