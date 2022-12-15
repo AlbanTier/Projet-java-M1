@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.Mapping;
 
 import ila.api.dto.TournoiCreateDto;
 import ila.api.dto.TournoiDto;
+import ila.api.dto.PageDto;
 import ila.project.tournament_manager.model.Tournoi;
 
 
