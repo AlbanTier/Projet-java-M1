@@ -5,7 +5,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import ila.project.tournament_manager.model.Tournoi;
 
-public class TournoiRepository extends JpaRepository<Tournoi>, Long>{
+public interface TournoiRepository extends JpaRepository<Tournoi, Long>{
 
   /*   Page<Tournoi> findAllByTournoiNameStartingWithOrEquipeStartingWith(String name, String equipe, PageRequest page);
     Page<Tournoi> findAllByTournoiNameEndingWithOrEquipeEndingWith(String name, String identity, PageRequest page);
