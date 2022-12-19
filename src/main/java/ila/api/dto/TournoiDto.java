@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 @Builder
 public class TournoiDto {
+    
     private Long id;
     private Date date;
     private String type;
