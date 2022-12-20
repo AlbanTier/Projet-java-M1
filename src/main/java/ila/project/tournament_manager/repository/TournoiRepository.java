@@ -7,8 +7,8 @@ import ila.project.tournament_manager.model.Tournoi;
 
 public interface TournoiRepository extends JpaRepository<Tournoi, Long>{
 
-  /*   Page<Tournoi> findAllByTournoiNameStartingWithOrEquipeStartingWith(String name, String equipe, PageRequest page);
-    Page<Tournoi> findAllByTournoiNameEndingWithOrEquipeEndingWith(String name, String identity, PageRequest page);
+     Page<Tournoi> findAllByTypeStartingWith(String type, String equipe, PageRequest page);
+    /*Page<Tournoi> findAllByTournoiNameEndingWithOrEquipeEndingWith(String name, String identity, PageRequest page);
     Page<Tournoi> findAllByTournoiNameOrEquipe(String name, String identity, PageRequest page);
     Page<Tournoi> findAllByTournoiContainsOrEquipeContains(String name, String equipe, PageRequest page);
     

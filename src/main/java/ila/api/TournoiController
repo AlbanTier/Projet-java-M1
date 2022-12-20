@@ -2,5 +2,18 @@
 @RestController
 @RequestMapping(path = "/v1/tournoi", produces = APPLICATION_JSON_VALUE)
 public class TournoiController {
-    
+    private final TournoiService tournoiService;
+    private final TournoiMapper mapper;
+
+    @GetMapping
+    public ResponseEntity<PageDto<TournoiDto>> getTournois(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false, defaultValue = "0") int page,
+            @RequestParam(required = false, defaultValue = "5") int pageSize
+    ) {
+        return ResponseEntity.ok(
+                mapper.mapToPageDto(tournoiService.getAllTournois(name, PageRequest.of(page, pageSize)))
+        );
+    }
+
 }
