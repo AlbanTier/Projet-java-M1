@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(path = "/v1/tournoi", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/v1/tournois", produces = APPLICATION_JSON_VALUE)
 public class TournoiController {
     private final TournoiService tournoiService;
     private final TournoiMapper mapper;
