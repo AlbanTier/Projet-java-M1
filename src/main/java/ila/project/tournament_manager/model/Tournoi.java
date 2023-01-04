@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -20,9 +21,14 @@ public class Tournoi {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Column(nullable = false)
     private Date date;
+    @Column(nullable = false)
     private String type;
     private String description;
-    private String etat;
-    private int nbParticipants;
+    @ManyToOne
+    private Etat etat;
+    @ManyToMany(mappedBy = "tournois")
+    private List<Equipe> equipes;
+
 }
