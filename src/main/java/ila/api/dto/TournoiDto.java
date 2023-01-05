@@ -14,6 +14,7 @@ public class TournoiDto {
     private Date date;
     private String type;
     private String description;
+    private String name;
     private List<EtatDto> etats;
     private List<EquipeDto> equipes;
 }
