@@ -22,5 +22,4 @@ public interface JoueurMapper {
     @Mapping(target = "data", source = "content")
     @Mapping(target = "context", source = ".")
     PageDto<TournoiDto> mapToPageDto(Page<Tournoi> page);
-
 }
