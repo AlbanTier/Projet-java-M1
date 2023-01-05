@@ -23,5 +23,8 @@ public interface EquipeMapper {
     Equipe mapToEntity(EquipeCreateDto equipeCreateDto, List<Joueur> joueurs);
 
     PageDto<EquipeDto> mapToPageDto(Page<Equipe> page);
+    @Mapping(target = "data", source = "content")
+    @Mapping(target = "context", source = ".")
+    PageDto<TournoiDto> mapToPageDto(Page<Tournoi> page);
 
 }

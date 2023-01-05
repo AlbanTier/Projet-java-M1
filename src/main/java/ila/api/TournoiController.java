@@ -35,4 +35,46 @@ public class TournoiController {
                 mapper.mapToPageDto(tournoiService.getAllTournois(name, PageRequest.of(page, pageSize)))
         );
     }
+
+    @PostMapping
+    public ResponseEntity<TournoiDto> createTournoi(
+            @RequestBody TournoiCreateDto tournoiCreateDto
+    ) {
+        Tournoi tournoi = mapper.mapToEntity(tournoiCreateDto);
+        Tournoi createdTournoi = tournoiService.saveTournoi(tournoi);
+        return ResponseEntity.status(HttpStatus.CREATED).body(mapper.mapToDto(createdTournoi));
+    }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<TournoiDto> updateTournoi(
+            @PathVariable Long id,
+            @RequestBody TournoiDto tournoiDto
+    ) {
+        Optional<Tournoi> optionalTournoi = tournoiService.getTournoiById(id);
+        if (optionalTournoi.isEmpty()) {
+            throw new ResourceNotFoundException("Tournoi", id);
+        }
+
+        if (!Objects.equals(id, tournoiDto.getId())) {
+            throw new IdMismatchException(id, tournoiDto.getId());
+        }
+
+        Tournoi tournoi = optionalTournoi.get();
+        tournoi.setName(tournoiDto.getName());
+        tournoi.setDescription(tournoi.getDescription());
+        tournoi.setType(tournoi.getType());
+
+        Tournoi updatedTournoi = tournoiService.saveTournoi(tournoi);
+        return ResponseEntity.ok(mapper.mapToDto(updatedTournoi));
+    }
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<TournoiDto> getTournoiById(
+            @PathVariable(name = "id") Long tournoiId
+    ) {
+        return tournoiService.getTournoiById(tournoiId)
+                .map(mapper::mapToDto)
+                .map(ResponseEntity::ok)
+                .orElseThrow(() -> new ResourceNotFoundException("Tournoi", tournoiId));
+    }
 }
