@@ -10,7 +10,7 @@ import java.util.List;
 public class EquipeDto {
     private Long id;
 
-    private String nom;
+    private String name;
 
     private List<JoueurDto> joueurs;
 

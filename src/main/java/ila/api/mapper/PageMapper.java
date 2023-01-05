@@ -17,7 +17,4 @@ public interface PageMapper {
     @Mapping(target = "total", source = "totalElements")
     PaginationContext toPaginationContext(Page<?> page);
 
-    @Mapping(target = "data", source = "content")
-    @Mapping(target = "context", source = ".")
-    PageDto<TournoiDto> mapToPageDto(Page<Tournoi> page);
 }

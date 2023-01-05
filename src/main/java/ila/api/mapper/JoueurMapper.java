@@ -10,7 +10,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.data.domain.Page;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PageMapper.class})
 public interface JoueurMapper {
 
     JoueurDto mapToDto(Joueur joueur);
@@ -21,6 +21,6 @@ public interface JoueurMapper {
 
     @Mapping(target = "data", source = "content")
     @Mapping(target = "context", source = ".")
-    PageDto<TournoiDto> mapToPageDto(Page<Tournoi> page);
+    PageDto<JoueurDto> mapToPageDto(Page<Joueur> page);
 
 }
