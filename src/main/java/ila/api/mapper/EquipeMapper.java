@@ -19,4 +19,3 @@ public interface EquipeMapper {
     Equipe mapToEntity(EquipeCreateDto equipeCreateDto, List<Joueur> joueurs);
 
 }
-e
