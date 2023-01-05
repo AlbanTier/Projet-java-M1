@@ -7,7 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import java.util.Optional;
 
 public interface EquipeService {
-    Page<Equipe> getAllEquipes(PageRequest page);
+    Page<Equipe> getAllEquipes(String name,PageRequest page);
 
     Optional<Equipe> getEquipeById(Long id);
 
