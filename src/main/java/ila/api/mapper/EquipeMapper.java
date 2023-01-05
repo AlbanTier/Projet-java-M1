@@ -20,7 +20,7 @@ public interface EquipeMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "tournois", ignore = true)
-    Equipe mapToEntity(EquipeCreateDto equipeCreateDto, List<Joueur> joueurs);
+    Equipe mapToEntity(EquipeCreateDto equipeCreateDto);
     @Mapping(target = "data", source = "content")
     @Mapping(target = "context", source = ".")
     PageDto<EquipeDto> mapToPageDto(Page<Equipe> page);
