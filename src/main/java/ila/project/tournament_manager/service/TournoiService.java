@@ -1,4 +1,4 @@
-package ila.service;
+package ila.project.tournament_manager.service;
 
 import java.util.Optional;
 

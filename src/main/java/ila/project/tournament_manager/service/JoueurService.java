@@ -1,4 +1,4 @@
-package ila.service;
+package ila.project.tournament_manager.service;
 
 import ila.project.tournament_manager.model.Joueur;
 import org.springframework.data.domain.Page;
