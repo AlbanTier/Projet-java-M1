@@ -1,8 +1,8 @@
-package ila.service.impl;
+package ila.project.tournament_manager.service.impl;
 
 import ila.project.tournament_manager.model.Joueur;
 import ila.project.tournament_manager.repository.JoueurRepository;
-import ila.service.JoueurService;
+import ila.project.tournament_manager.service.JoueurService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,4 +1,4 @@
-package ila.api;
+package ila.project.tournament_manager.controller;
 
 import org.springframework.web.bind.annotation.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import ila.api.dto.TournoiDto;
 import ila.api.exception.ResourceNotFoundException;
 import ila.api.mapper.TournoiMapper;
-import ila.service.TournoiService;
+import ila.project.tournament_manager.service.TournoiService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
