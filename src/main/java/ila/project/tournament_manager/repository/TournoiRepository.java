@@ -14,5 +14,5 @@ public interface TournoiRepository extends JpaRepository<Tournoi, Long>{
     Page<Tournoi> findAllByType(String type, Pageable page);
     Page<Tournoi> findAllByDate(Date date, Pageable page);
     Page<Tournoi> findAllByName(String name, Pageable page);
-
+    Tournoi save(Tournoi tournoi);
 }

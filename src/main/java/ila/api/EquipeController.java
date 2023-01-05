@@ -1,4 +1,4 @@
-package ila.project.tournament_manager.controller;
+package ila.api;
 
 import ila.project.tournament_manager.service.EquipeService;
 import lombok.RequiredArgsConstructor;
