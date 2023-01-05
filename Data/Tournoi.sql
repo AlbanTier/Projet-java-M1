@@ -13,5 +13,8 @@ VALUES (1, '2023-01-24', 'Valorant Open Tour France', 'Le VALORANT OPEN TOUR FRA
        (6, '2023-01-13', 'MINISH 4.7', 'Tournoi Smash  Bros Ultimate','payant',1),
        (7, '2018-09-24', 'Nett Killing', 'Tournoi Animal Crossing','payant',1);
 
+INSERT INTO equipe(id, name)
+    VALUE (1, 'Equipe 1');
+
 -- select * from tournoi
 

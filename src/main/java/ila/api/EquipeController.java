@@ -23,12 +23,11 @@ public class EquipeController {
     private final EquipeMapper equipeMapper;
     @GetMapping
     public ResponseEntity<PageDto<EquipeDto>>getEquipes(
-        @RequestParam(required = false) String name,
         @RequestParam(required = false, defaultValue = "0") int page,
         @RequestParam(required = false, defaultValue = "5") int pageSize
     ){
         return ResponseEntity.ok(
-            equipeMapper.mapToPageDto(equipeService.getAllEquipes(name, PageRequest.of(page, pageSize)))
+            equipeMapper.mapToPageDto(equipeService.getAllEquipes(PageRequest.of(page, pageSize)))
         );
 
     }
