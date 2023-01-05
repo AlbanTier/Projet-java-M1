@@ -16,9 +16,7 @@ Alban :star:
 `docker run --name mysql-tournamentmanager -p 3306:3306 -e MYSQL_USER=java -e MYSQL_PASSWORD=java -e MYSQL_DATABASE=tournament -e MYSQL_ROOT_PASSWORD=root -d mysql`
 
 # :rocket: Pour faire fonctionner le projet :
-  
- - `npm install` 
- - `npx tailwindcss -i styles/input.css -o ./src/main/resources/static/css/main.css`
+
  - Swagger
  - http://localhost:8080/swagger-ui/index.html
  

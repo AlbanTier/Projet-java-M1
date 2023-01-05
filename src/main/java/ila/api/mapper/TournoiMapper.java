@@ -13,8 +13,13 @@ import org.springframework.data.domain.Page;
 //@Mapper(componentModel = "spring", uses = {EquipeMapper.class, PageMapper.class})
 @Mapper(componentModel = "spring", uses = {PageMapper.class, PageMapper.class})
 public interface TournoiMapper {
-    Tournoi mapToEntity(TournoiCreateDto TournoiCreateDto);
     TournoiDto mapToDto(Tournoi Tournoi);
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "etat", ignore = true)
+    Tournoi mapToEntity(TournoiCreateDto TournoiCreateDto);
+    /*Tournoi mapToEntity(TournoiCreateDto TournoiCreateDto, List<Equipe> equipes);*/
+
 
     @Mapping(target = "data", source = "content")
     @Mapping(target = "context", source = ".")
