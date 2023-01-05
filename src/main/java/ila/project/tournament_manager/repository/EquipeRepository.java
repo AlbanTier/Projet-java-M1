@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EquipeRepository extends JpaRepository<Equipe, Long> {
     Page<Equipe> findAll(Pageable page);
-    Page<Equipe> findAllByTeamName(String name, Pageable page);
+    Page<Equipe> findAllByName(String name, Pageable page);
 }
