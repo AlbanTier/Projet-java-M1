@@ -26,6 +26,7 @@ public class Tournoi {
     @Column(nullable = false)
     private String type;
     private String description;
+    private String name;
     @ManyToOne
     private Etat etat;
     @ManyToMany(mappedBy = "tournois")
