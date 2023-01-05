@@ -19,5 +19,7 @@ Alban :star:
   
  - `npm install` 
  - `npx tailwindcss -i styles/input.css -o ./src/main/resources/static/css/main.css`
+ - Swagger
+ - http://localhost:8080/swagger-ui/index.html
  
  # :star2:
