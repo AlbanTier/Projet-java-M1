@@ -19,7 +19,7 @@ public class Equipe {
     private Long id;
 
     @Column(nullable = false)
-    private String nom;
+    private String teamName;
 
     @ManyToMany(mappedBy = "equipes")
     private List<Joueur> joueurs;
