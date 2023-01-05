@@ -1,8 +1,10 @@
 package ila.api;
 
+import ila.api.dto.PageDto;
 import ila.api.dto.TournoiCreateDto;
 import ila.api.exception.IdMismatchException;
 import ila.project.tournament_manager.model.Tournoi;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -23,55 +25,14 @@ public class TournoiController {
     private final TournoiService tournoiService;
     private final TournoiMapper mapper;
 
-    @GetMapping(path = "/{id}")
-    public ResponseEntity<TournoiDto> getTournoiById(
-            @PathVariable(name = "id") Long tournoiId
+    @GetMapping
+    public ResponseEntity<PageDto<TournoiDto>> getTournois(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false, defaultValue = "0") int page,
+            @RequestParam(required = false, defaultValue = "5") int pageSize
     ) {
-        return tournoiService.getTournoiById(tournoiId)
-                .map(mapper::mapToDto)
-                .map(ResponseEntity::ok)
-                .orElseThrow(() -> new ResourceNotFoundException("Tournoi", tournoiId));
+        return ResponseEntity.ok(
+                mapper.mapToPageDto(tournoiService.getAllTournois(name, PageRequest.of(page, pageSize)))
+        );
     }
-
-    /*@PostMapping
-    public ResponseEntity<TournoiDto> createTournoi(
-            @RequestBody TournoiCreateDto TournoiCreateDto
-    ) {
-        Tournoi Tournoi = mapper.mapToEntity(TournoiCreateDto);
-        Tournoi createdTournoi = TournoiService.saveTournoi(Tournoi);
-        return ResponseEntity.status(HttpStatus.CREATED).body(mapper.mapToDto(createdTournoi));
-    }*/
-
-   /* @PutMapping(path = "/{id}")
-    public ResponseEntity<TournoiDto> updateTournoi(
-            @PathVariable Long id,
-            @RequestBody TournoiDto TournoiDto
-    ) {
-        Optional<Tournoi> optionalTournoi = TournoiService.getTournoiById(id);
-        if (optionalTournoi.isEmpty()) {
-            throw new ResourceNotFoundException("Tournoi", id);
-        }
-
-        if (!Objects.equals(id, TournoiDto.getId())) {
-            throw new IdMismatchException(id, TournoiDto.getId());
-        }
-
-        Tournoi Tournoi = optionalTournoi.get();
-        Tournoi.setName(TournoiDto.getName());
-        Tournoi.setDescription(TournoiDto.getDescription());
-
-        Tournoi updatedTournoi = TournoiService.saveTournoi(Tournoi);
-        return ResponseEntity.ok(mapper.mapToDto(updatedTournoi));
-    }*/
-
-  /*  @GetMapping(path = "/{id}")
-    public ResponseEntity<TournoiDto> getTournoiById(
-            @PathVariable(name = "id") Long TournoiId
-    ) {
-        return TournoiService.getTournoiById(TournoiId)
-                .map(mapper::mapToDto)
-                .map(ResponseEntity::ok)
-                .orElseThrow(() -> new ResourceNotFoundException("Tournoi", TournoiId));
-    }*/
-    
 }
