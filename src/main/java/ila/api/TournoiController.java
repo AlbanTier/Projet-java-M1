@@ -24,7 +24,6 @@ public class TournoiController {
     private final TournoiMapper mapper;
 
     @GetMapping(path = "/{id}")
-    @ExceptionHandler(value = {ResourceNotFoundException.class})
     public ResponseEntity<TournoiDto> getTournoiById(
             @PathVariable(name = "id") Long tournoiId
     ) {
