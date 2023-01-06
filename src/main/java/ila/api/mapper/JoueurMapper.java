@@ -1,9 +1,7 @@
 package ila.api.mapper;
 
-import ila.api.dto.JoueurCreateDto;
-import ila.api.dto.JoueurDto;
-import ila.api.dto.PageDto;
-import ila.api.dto.TournoiDto;
+import ila.api.dto.*;
+import ila.project.tournament_manager.model.Equipe;
 import ila.project.tournament_manager.model.Joueur;
 import ila.project.tournament_manager.model.Tournoi;
 import org.mapstruct.Mapper;
@@ -22,5 +20,4 @@ public interface JoueurMapper {
     @Mapping(target = "data", source = "content")
     @Mapping(target = "context", source = ".")
     PageDto<JoueurDto> mapToPageDto(Page<Joueur> page);
-
 }
