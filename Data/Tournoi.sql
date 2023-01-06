@@ -14,10 +14,10 @@ VALUES (1, '2023-01-24', 'Valorant Open Tour France', 'Le VALORANT OPEN TOUR FRA
        (7, '2018-09-24', 'Nett Killing', 'Tournoi Animal Crossing','payant',1);
 
 INSERT INTO equipe(id, name)
-    VALUE (1, 'CatCorp');
+    VALUE (1, 'CatCorp'),
         (2, 'Solary');
 
 INSERT INTO joueur(id, adresse, pseudo)
-    VALUE (1, 'Rue de la paix', 'Tobby');
+    VALUE (1, 'Rue de la paix', 'Tobby'),
         (2, 'Rue des lilas', 'Bob');
 
