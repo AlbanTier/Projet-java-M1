@@ -15,8 +15,12 @@ import java.util.Optional;
 public class EquipeServiceImpl implements EquipeService {
     public final EquipeRepository equipeRepository;
     @Override
-    public Page<Equipe> getAllEquipes(PageRequest page) {
-        return equipeRepository.findAll(page);
+    public Page<Equipe> getAllEquipes(String name, PageRequest page) {
+        if (name == null) {
+            return equipeRepository.findAll(page);
+        } else {
+            return equipeRepository.findAllByName(name, page);
+        }
     }
 
     @Override

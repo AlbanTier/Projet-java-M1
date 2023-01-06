@@ -9,7 +9,7 @@ import java.util.List;
 @Builder
 public class EquipeCreateDto {
 
-    private String nom;
+    private String name;
 
     private List<JoueurDto> joueurs;
 

@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.data.domain.Page;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PageMapper.class})
 public interface JoueurMapper {
 
     JoueurDto mapToDto(Joueur joueur);

@@ -13,17 +13,16 @@ import org.springframework.data.domain.Page;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PageMapper.class})
 public interface EquipeMapper {
 
     EquipeDto mapToDto(Equipe equipe);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "tournois", ignore = true)
-    Equipe mapToEntity(EquipeCreateDto equipeCreateDto, List<Joueur> joueurs);
-
+    Equipe mapToEntity(EquipeCreateDto equipeCreateDto);
     @Mapping(target = "data", source = "content")
     @Mapping(target = "context", source = ".")
-    PageDto<TournoiDto> mapToPageDto(Page<Tournoi> page);
+    PageDto<EquipeDto> mapToPageDto(Page<Equipe> page);
 
 }
