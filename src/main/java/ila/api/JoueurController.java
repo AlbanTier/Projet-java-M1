@@ -73,7 +73,7 @@ public class JoueurController {
         joueur.setAdresse(joueurDto.getAdresse());
 
         Joueur updatedJoueur = joueurService.saveJoueur(joueur);
-        return ResponseEntity.ok(mapper.mapToDto(updatedJoueur));
+        return ResponseEntity.status(HttpStatus.OK).body(mapper.mapToDto(updatedJoueur));
     }
 
 }
