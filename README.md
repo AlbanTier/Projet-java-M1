@@ -19,5 +19,5 @@ Alban :star:
 
  - Swagger
  - http://localhost:8080/swagger-ui/index.html
- 
+ - Pour peupler la base de données avec des données test, importer le fichier tournoi.sql dans le dossier /data
  # :star2:
